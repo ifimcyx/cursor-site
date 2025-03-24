@@ -16,7 +16,7 @@ export const Hero = () => {
       <div className="absolute inset-x-0 bottom-0 z-0 opacity-50">
         <div className="relative w-full max-w-4xl h-[65vh] mx-auto flex items-end">
           <Image 
-            src="/images/1.png" 
+            src={`${process.env.NODE_ENV === 'production' ? '/cursor-site' : ''}/images/1.png`}
             alt="Cursor编辑器界面" 
             fill 
             style={{objectFit: "contain", objectPosition: "bottom"}}

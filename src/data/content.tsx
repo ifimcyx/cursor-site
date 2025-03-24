@@ -1,12 +1,17 @@
 import React from "react";
 import { CardItem } from "@/components/ui/expandable-card";
 
+// 图片路径前缀处理函数
+const getImagePath = (path: string) => {
+  return `${process.env.NODE_ENV === 'production' ? '/cursor-site' : ''}${path}`;
+};
+
 // 实践项目数据
 export const practiceProjects: CardItem[] = [
   {
     title: "写个IOS去开屏广告的插件",
     description: "使用Cursor编写iOS越狱插件，跳过应用开屏广告",
-    imageSrc: "/images/2.png",
+    imageSrc: getImagePath("/images/2.png"),
     content: (
       <div>
         <p className="mb-4">
@@ -27,7 +32,7 @@ export const practiceProjects: CardItem[] = [
             当项目需要新的环境和依赖，因为开启了agent模式，在得到确认后，cursor可以在终端运行命令行安装对应的Theos环境和依赖。这对不熟悉新类型项目的人来说非常友好。整个安装过程可能会出现错误，但agent会自动帮助根据错误修复。
           </p>
         ),
-        image: "/images/3.png"
+        image: getImagePath("/images/3.png")
       },
       {
         title: "等待agent回复、编写代码和写入文件",
@@ -42,7 +47,7 @@ export const practiceProjects: CardItem[] = [
             之前需要在聊天区滚动来查看本次指令改了哪些文件，现在是在输入框上集中展示本次改了哪些文件，改的进度怎么样了。
           </p>
         ),
-        image: "/images/5.png"
+        image: getImagePath("/images/5.png")
       },
       {
         title: "编译插件",
@@ -53,7 +58,7 @@ export const practiceProjects: CardItem[] = [
             在编写完代码文件后，可以直接自动运行编译工作。命令行会在聊天窗口展示，也可以在单独的终端面板展示。
           </p>
         ),
-        image: "/images/8.jpg"
+        image: getImagePath("/images/8.jpg")
       },
       {
         title: "后续动作建议",
@@ -64,7 +69,7 @@ export const practiceProjects: CardItem[] = [
             cursor会话后会在末尾做一个小总结，并给出建议的操作。在这边它会指引用户去到手机里去使用trollfools去把插件进行注入。
           </p>
         ),
-        image: "/images/9.png"
+        image: getImagePath("/images/9.png")
       },
       {
         title: "插件最终效果",
@@ -73,14 +78,14 @@ export const practiceProjects: CardItem[] = [
             打开KEEP会有开屏广告，使用trollfools注入编译的插件后，开屏广告消失。退出插件后，广告重新出现。
           </p>
         ),
-        image: "/images/7.png"
+        image: getImagePath("/images/7.png")
       }
     ]
   },
   {
     title: "写个Framer去水印的Code Component",
     description: "使用Cursor创建Framer自定义组件，去除网站水印",
-    imageSrc: "/images/10.png",
+    imageSrc: getImagePath("/images/10.png"),
     content: (
       <div>
         <p className="mb-4">
@@ -102,7 +107,7 @@ export const practiceProjects: CardItem[] = [
             通过@可以引入多样的内容作为context，辅助代码生成。对context也可以快速预览。
           </p>
         ),
-        image: "/images/11.png"
+        image: getImagePath("/images/11.png")
       },
       {
         title: "等待agent回复、编写代码和写入文件",
@@ -111,7 +116,7 @@ export const practiceProjects: CardItem[] = [
             Cursor根据提供的上下文信息，生成去除水印的代码组件。
           </p>
         ),
-        image: "/images/13.png"
+        image: getImagePath("/images/13.png")
       },
       {
         title: "二次修改",
@@ -124,7 +129,7 @@ export const practiceProjects: CardItem[] = [
             在具体文件中，会以diff模式展示变更内容，底部有对当前文件的一次性接受变更。
           </p>
         ),
-        image: "/images/15.png"
+        image: getImagePath("/images/15.png")
       },
       {
         title: "在Framer中应用",
@@ -134,7 +139,7 @@ export const practiceProjects: CardItem[] = [
             后面利用类似的原理，加入去除spline的水印的功能，并在配置面板暴露属性，可以按需开关。
           </p>
         ),
-        image: "/images/17.png"
+        image: getImagePath("/images/17.png")
       },
       {
         title: "最终效果验证",
@@ -145,14 +150,14 @@ export const practiceProjects: CardItem[] = [
             https://bisque-app-296964.framer.app/
           </p>
         ),
-        image: "/images/16.png"
+        image: getImagePath("/images/16.png")
       }
     ]
   },
   {
     title: "写个Figma插件：comfigma",
     description: "使用Cursor开发Figma插件，集成ComfyUI图像生成功能",
-    imageSrc: "/images/18.png",
+    imageSrc: getImagePath("/images/18.png"),
     content: (
       <div>
         <p className="mb-4">
@@ -173,7 +178,7 @@ export const practiceProjects: CardItem[] = [
             准备一个标准的文生图工作流并导出为comfyui api。
           </p>
         ),
-        image: "/images/18.png"
+        image: getImagePath("/images/18.png")
       },
       {
         title: "编写prompt并把上一部的资料作为context输入",
@@ -182,7 +187,7 @@ export const practiceProjects: CardItem[] = [
             将Figma插件文档与ComfyUI API文档作为上下文提供给Cursor，描述需要一个在Figma中调用ComfyUI工作流生成图片的插件。
           </p>
         ),
-        image: "/images/19.png"
+        image: getImagePath("/images/19.png")
       },
       {
         title: "调试功能",
@@ -197,7 +202,7 @@ export const practiceProjects: CardItem[] = [
             3. 尝试增加后端地址配置，但是遇到了问题，使用了cursor的checkpoint功能restore了（非常好用）。它同时会给出平替建议，让我使用端口转发的方式来实现。
           </p>
         ),
-        image: "/images/23.png"
+        image: getImagePath("/images/23.png")
       },
       {
         title: "完善界面",
@@ -207,7 +212,7 @@ export const practiceProjects: CardItem[] = [
             我把在figma做的设计稿导出png发给cursor。
           </p>
         ),
-        image: "/images/27.png"
+        image: getImagePath("/images/27.png")
       }
     ]
   },
@@ -218,7 +223,7 @@ export const designExplorations: CardItem[] = [
   {
     title: "更好的与AI对话：Cursor与Mermaid",
     description: "使用Mermaid可视化辅助AI理解需求",
-    imageSrc: "/images/28.png",
+    imageSrc: getImagePath("/images/28.png"),
     content: (
       <div>
         <p className="mb-4">
@@ -237,7 +242,7 @@ export const designExplorations: CardItem[] = [
             以下是生成的mermaid格式的需求文档，里面主要从核心功能模块、详细功能需求、系统角色及权限、技术架构等方面进行了需求说明。
           </p>
         ),
-        image: "/images/28.png"
+        image: getImagePath("/images/28.png")
       },
       {
         title: "修改mermaid并引用",
@@ -246,7 +251,7 @@ export const designExplorations: CardItem[] = [
             使用@的方式把mermaid文档作为context输入给cursor，让其理解并基于可视化需求生成代码。
           </p>
         ),
-        image: "/images/29.png"
+        image: getImagePath("/images/29.png")
       },
       {
         title: "产物验证",
@@ -255,14 +260,14 @@ export const designExplorations: CardItem[] = [
             下面图一到图四为生成的页面例子，整个网站架构和mermaid文档里描述的一致，证明了这种需求表达方式的有效性。
           </p>
         ),
-        image: "/images/30.png"
+        image: getImagePath("/images/30.png")
       }
     ]
   },
   {
     title: "更优雅的设计对接：Figma Context MCP",
     description: "探索Figma设计稿与Cursor的优雅对接方式",
-    imageSrc: "/images/31.png",
+    imageSrc: getImagePath("/images/31.png"),
     content: (
       <div>
         <p className="mb-4">
@@ -281,7 +286,7 @@ export const designExplorations: CardItem[] = [
             2. 试过使用类似lovable，先用figma插件通过D2C的形式转为代码，用cursor导入后再加工。 <a href="https://www.figma.com/community/plugin/842128343887142055" target="_blank">Figma to Code (HTML, Tailwind, Flutter, SwiftUI) | Figma</a>
           </p>
         ),
-        image: "/images/33.png"
+        image: getImagePath("/images/33.png")
       },
       {
         title: "Figma Context MCP对比纯图片的效果",
@@ -292,7 +297,7 @@ export const designExplorations: CardItem[] = [
             <a href="https://github.com/GLips/Figma-Context-MCP">GitHub - GLips/Figma-Context-MCP: MCP server to provide Figma layout information to AI coding agents</a>
           </p>
         ),
-        image: "/images/34.png"
+        image: getImagePath("/images/34.png")
       },
       {
         title: "效果展示",
@@ -309,7 +314,7 @@ export const designExplorations: CardItem[] = [
             可以看到figma MCP除了返回json内容，还返回了各种切图资源。对比效果表明，MCP方式可以提供更精确的布局信息。
           </p>
         ),
-        image: "/images/32.png"
+        image: getImagePath("/images/32.png")
       }
     ]
   },
