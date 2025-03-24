@@ -1,0 +1,11 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#1e1e1e" />
+  <rect x="0" y="0" width="800" height="400" fill="url(#diagonalHatch)" />
+  <text x="400" y="200" font-family="Arial" font-size="32" text-anchor="middle" fill="#9d4edd">Cursor 图片</text>
+  
+  <defs>
+    <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="10" height="10">
+      <path d="M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2" stroke="#3a3a3a" stroke-width="1" />
+    </pattern>
+  </defs>
+</svg> 

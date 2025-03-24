@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b3b3b;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 背景网格 */
+.bg-grid-white\/\[0\.05\] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+/* 滚动平滑 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 亮点动画 */
+.animate-glow {
+  animation: glow 10s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* 淡入动画 */
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prose样式覆盖 */
+.prose {
+  max-width: none;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  border: 1px solid #2d2d2d;
+}
+
+.prose a {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2em 0;
+}
+
+.prose th {
+  background-color: #1f1f1f;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75em 1em;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.prose td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid #333;
+}
+
+.prose tr:hover td {
+  background-color: #1f1f1f;
+}
+
+/* 时间线节点脉冲动画 */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(168, 85, 247, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
+  }
+}
+
+.timeline-node {
+  animation: pulse 2s infinite;
+}
+
+/* 时间线连接线渐变 */
+.timeline-line {
+  background: linear-gradient(to bottom, rgba(147, 51, 234, 0.2), rgba(147, 51, 234, 0.8), rgba(147, 51, 234, 0.2));
+}
+
+/* 时间线卡片悬浮效果 */
+.timeline-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(147, 51, 234, 0.2);
+}
